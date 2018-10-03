@@ -32,6 +32,14 @@ module.exports = {
 
   module: {
     rules: [{
+      test: /\.(jpg|png)$/,
+      use: {
+        loader: "file-loader",
+        options: {
+          name: "[path][name].[hash].[ext]",
+        },
+      },
+    }, {
       enforce: "pre", //to check source files, not modified by other loaders (like babel-loader)
       test: /\.js$/,
       exclude: /node_modules/,
