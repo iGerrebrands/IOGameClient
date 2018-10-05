@@ -11,8 +11,7 @@ const load = () => {
 
 const setup = () => {
     let cat = new PIXI.Sprite(PIXI.loader.resources[catImg].texture);
-  
-    //Add the cat to the stage
+    
     app.stage.addChild(cat);
 
     app.ticker.add(() => {
@@ -22,12 +21,12 @@ const setup = () => {
 
 export default {
     init: () => {
-        app = new PIXI.Application({ 
-            width: 256,         // default: 800
-            height: 256,        // default: 600
-            antialias: true,    // default: false
-            transparent: false, // default: false
-            resolution: 1       // default: 1
+        app = new PIXI.Application({
+            width: 256,  
+            height: 256,  
+            antialias: true,
+            transparent: false,
+            resolution: 1
         });
         
         document.body.appendChild(app.view);

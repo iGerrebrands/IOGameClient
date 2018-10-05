@@ -1,4 +1,12 @@
 import '../style/index.scss';
-import Controller from './game/controller';
+import Game from './game/game';
+import login from './login/login';
 
-Controller.init();
+
+const doLogin = () => {
+    login((success, data) => {
+        success ? Game.init(data) : doLogin();
+    });
+};
+
+doLogin();
